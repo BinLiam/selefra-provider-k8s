@@ -12,7 +12,12 @@ esac
 
 version=v${1}
 time=$(date "+%Y-%m-%d")
-VERSION=`cat provider/k8s/metadata.yaml | grep 'latest-version' | awk -F ' ' '{print $2}'`
+if [ -f "provider/k8s/metadata.yaml" ];then
+  VERSION=`cat provider/k8s/metadata.yaml | grep 'latest-version' | awk -F ' ' '{print $2}'`
+else
+  VERSION="k8s"
+  mkdir -p provider/k8s
+fi
 FOR=`cat selefra-provider-k8s* | awk -F '_' '{print $3,$4}' | awk -F '.' '{print $1}' |  sed "s# #_#g"`
 if [ -d "provider/k8s/$version" ];then rm -rf provider/k8s/$version ; else echo "OK!"; fi && cp -r provider/template/version1 provider/k8s/$version
 
@@ -36,13 +41,15 @@ done
 
 if [[ "$VERSION" != "$version" ]]; then
   cp provider/template/metadata.yaml provider/template/metadata.yaml.bak
-  sed "${sedi[@]}" "s#{{.ProviderName}}#k8s#g" provider/template/metadata.yaml 
+  sed "${sedi[@]}" "s#{{.ProviderName}}#k8s#g" provider/template/metadata.yaml
   sed "${sedi[@]}" "s#{{.LatestVersion}}#${version}#g" provider/template/metadata.yaml
   sed "${sedi[@]}" "s#{{.LatestUpdated}}#${time}#g" provider/template/metadata.yaml
-  sed "${sedi[@]}" "s#{{.Introduction}}#A Selefra provider for Amazon Web Services (k8s).#g" provider/template/metadata.yaml
+  sed "${sedi[@]}" "s#{{.Introduction}}#A Selefra provider for k8s .#g" provider/template/metadata.yaml
   sed "${sedi[@]}" "s#{{.ProviderVersion}}#${version}#g" provider/template/metadata.yaml
   sed "${sedi[@]}" '6d' provider/template/metadata.yaml
-  sed -n '/^ /p' provider/k8s/metadata.yaml >> provider/template/metadata.yaml
+  if [ -f "provider/k8s/metadata.yaml" ];then
+    sed -n '/^ /p' provider/k8s/metadata.yaml >> provider/template/metadata.yaml
+  fi
   echo "  - ${version}" >> provider/template/metadata.yaml
   cat provider/template/metadata.yaml > provider/k8s/metadata.yaml
   mv provider/template/metadata.yaml.bak provider/template/metadata.yaml
