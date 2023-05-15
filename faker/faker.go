@@ -1,8 +1,8 @@
 package faker
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	"fmt"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	"math/rand"
 	"reflect"
 	"time"
@@ -11,8 +11,8 @@ import (
 )
 
 type faker struct {
-	maxDepth	int
-	logger		zerolog.Logger
+	maxDepth int
+	logger   zerolog.Logger
 }
 
 var errEFaceNotAllowed = fmt.Errorf(constants.Interfacenotallowed)
@@ -161,8 +161,8 @@ func FakeObject(obj interface{}) error {
 		return fmt.Errorf(constants.Objectisnils, reflectType.Elem().String())
 	}
 	f := &faker{
-		maxDepth:	12,
-		logger:		zerolog.Nop(),
+		maxDepth: 12,
+		logger:   zerolog.Nop(),
 	}
 	rval := reflect.ValueOf(obj)
 	finalValue, err := f.getFakedValue(obj)

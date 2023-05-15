@@ -1,8 +1,8 @@
 package mocks
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockLimitRangesGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockLimitRangesGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockLimitRangesGetterMockRecorder
 }
 
 type MockLimitRangesGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockLimitRangesGetterMockRecorder) LimitRanges(arg0 interface{}) *gomo
 }
 
 type MockLimitRangeInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockLimitRangeInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockLimitRangeInterfaceMockRecorder
 }
 
 type MockLimitRangeInterfaceMockRecorder struct {

@@ -1,8 +1,8 @@
 package mocks
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockPersistentVolumeClaimsGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockPersistentVolumeClaimsGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockPersistentVolumeClaimsGetterMockRecorder
 }
 
 type MockPersistentVolumeClaimsGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockPersistentVolumeClaimsGetterMockRecorder) PersistentVolumeClaims(a
 }
 
 type MockPersistentVolumeClaimInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockPersistentVolumeClaimInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockPersistentVolumeClaimInterfaceMockRecorder
 }
 
 type MockPersistentVolumeClaimInterfaceMockRecorder struct {

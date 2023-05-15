@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockLeasesGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockLeasesGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockLeasesGetterMockRecorder
 }
 
 type MockLeasesGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockLeasesGetterMockRecorder) Leases(arg0 interface{}) *gomock.Call {
 }
 
 type MockLeaseInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockLeaseInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockLeaseInterfaceMockRecorder
 }
 
 type MockLeaseInterfaceMockRecorder struct {

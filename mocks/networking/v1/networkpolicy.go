@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockNetworkPoliciesGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockNetworkPoliciesGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockNetworkPoliciesGetterMockRecorder
 }
 
 type MockNetworkPoliciesGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockNetworkPoliciesGetterMockRecorder) NetworkPolicies(arg0 interface{
 }
 
 type MockNetworkPolicyInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockNetworkPolicyInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockNetworkPolicyInterfaceMockRecorder
 }
 
 type MockNetworkPolicyInterfaceMockRecorder struct {

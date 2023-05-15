@@ -9,7 +9,7 @@ import (
 )
 
 type OwnerReferences struct {
-	ResourceUID	types.UID
+	ResourceUID types.UID
 	v1.OwnerReference
 }
 
@@ -19,8 +19,8 @@ func ContextExpand() func(ctx context.Context, clientMeta *schema.ClientMeta, cl
 		clientTaskContextSlice := make([]*schema.ClientTaskContext, 0)
 		for _, ctxName := range client.contexts {
 			clientTaskContextSlice = append(clientTaskContextSlice, &schema.ClientTaskContext{
-				Client:	client.CopyWithContext(ctxName),
-				Task:	task,
+				Client: client.CopyWithContext(ctxName),
+				Task:   task,
 			})
 		}
 		return clientTaskContextSlice

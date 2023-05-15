@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockCSIStorageCapacitiesGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockCSIStorageCapacitiesGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockCSIStorageCapacitiesGetterMockRecorder
 }
 
 type MockCSIStorageCapacitiesGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockCSIStorageCapacitiesGetterMockRecorder) CSIStorageCapacities(arg0 
 }
 
 type MockCSIStorageCapacityInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockCSIStorageCapacityInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockCSIStorageCapacityInterfaceMockRecorder
 }
 
 type MockCSIStorageCapacityInterfaceMockRecorder struct {

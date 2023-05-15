@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockVolumeAttachmentsGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockVolumeAttachmentsGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockVolumeAttachmentsGetterMockRecorder
 }
 
 type MockVolumeAttachmentsGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockVolumeAttachmentsGetterMockRecorder) VolumeAttachments() *gomock.C
 }
 
 type MockVolumeAttachmentInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockVolumeAttachmentInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockVolumeAttachmentInterfaceMockRecorder
 }
 
 type MockVolumeAttachmentInterfaceMockRecorder struct {

@@ -10,8 +10,8 @@ import (
 )
 
 type MockAuthorizationV1Interface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockAuthorizationV1InterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockAuthorizationV1InterfaceMockRecorder
 }
 
 type MockAuthorizationV1InterfaceMockRecorder struct {

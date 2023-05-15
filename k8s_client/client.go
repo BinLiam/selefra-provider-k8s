@@ -1,9 +1,9 @@
 package k8s_client
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	"context"
 	"fmt"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	"strings"
 
 	"k8s.io/client-go/kubernetes"
@@ -14,13 +14,13 @@ import (
 )
 
 type Client struct {
-	services	map[string]kubernetes.Interface
-	contexts	[]string
-	paths		map[string]struct{}
+	services map[string]kubernetes.Interface
+	contexts []string
+	paths    map[string]struct{}
 
-	Context	string
+	Context string
 
-	KubeConfig	clientcmd.ClientConfig
+	KubeConfig clientcmd.ClientConfig
 }
 
 func (c *Client) Client() kubernetes.Interface {
@@ -29,11 +29,11 @@ func (c *Client) Client() kubernetes.Interface {
 
 func (c Client) CopyWithContext(k8sContext string) *Client {
 	return &Client{
-		services:	c.services,
-		contexts:	c.contexts,
-		paths:		c.paths,
-		KubeConfig:	c.KubeConfig,
-		Context:	k8sContext,
+		services:   c.services,
+		contexts:   c.contexts,
+		paths:      c.paths,
+		KubeConfig: c.KubeConfig,
+		Context:    k8sContext,
 	}
 }
 
@@ -89,11 +89,11 @@ func NewClient(ctx context.Context, k8sConfigFile string, k8sContextSlice []stri
 	}
 
 	c := Client{
-		services:	make(map[string]kubernetes.Interface),
-		contexts:	contexts,
-		Context:	contexts[0],
-		paths:		make(map[string]struct{}),
-		KubeConfig:	kubeConfig,
+		services:   make(map[string]kubernetes.Interface),
+		contexts:   contexts,
+		Context:    contexts[0],
+		paths:      make(map[string]struct{}),
+		KubeConfig: kubeConfig,
 	}
 
 	for _, ctxName := range contexts {

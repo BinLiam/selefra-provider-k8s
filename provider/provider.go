@@ -1,8 +1,8 @@
 package provider
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	"context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	"github.com/selefra/selefra-provider-k8s/k8s_client"
 	"strings"
 
@@ -15,9 +15,9 @@ var Version = constants.V
 
 func GetProvider() *provider.Provider {
 	return &provider.Provider{
-		Name:		constants.Ks,
-		Version:	Version,
-		TableList:	GenTables(),
+		Name:      constants.Ks,
+		Version:   Version,
+		TableList: GenTables(),
 		ClientMeta: schema.ClientMeta{
 			InitClient: func(ctx context.Context, clientMeta *schema.ClientMeta, config *viper.Viper) ([]any, *schema.Diagnostics) {
 
@@ -48,7 +48,7 @@ func GetProvider() *provider.Provider {
 			DefaultColumnValueConvertorBlackList: []string{
 				constants.Constants_13,
 			},
-			DataSourcePullResultAutoExpand:	true,
+			DataSourcePullResultAutoExpand: true,
 		},
 		ErrorsHandlerMeta: schema.ErrorsHandlerMeta{
 			IgnoredErrors: []schema.IgnoredError{schema.IgnoredErrorOnSaveResult},

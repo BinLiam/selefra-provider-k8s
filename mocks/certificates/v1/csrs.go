@@ -1,8 +1,8 @@
 package mocks
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockCertificateSigningRequestsGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockCertificateSigningRequestsGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockCertificateSigningRequestsGetterMockRecorder
 }
 
 type MockCertificateSigningRequestsGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockCertificateSigningRequestsGetterMockRecorder) CertificateSigningRe
 }
 
 type MockCertificateSigningRequestInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockCertificateSigningRequestInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockCertificateSigningRequestInterfaceMockRecorder
 }
 
 type MockCertificateSigningRequestInterfaceMockRecorder struct {

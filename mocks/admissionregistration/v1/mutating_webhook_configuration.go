@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockMutatingWebhookConfigurationsGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockMutatingWebhookConfigurationsGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockMutatingWebhookConfigurationsGetterMockRecorder
 }
 
 type MockMutatingWebhookConfigurationsGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockMutatingWebhookConfigurationsGetterMockRecorder) MutatingWebhookCo
 }
 
 type MockMutatingWebhookConfigurationInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockMutatingWebhookConfigurationInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockMutatingWebhookConfigurationInterfaceMockRecorder
 }
 
 type MockMutatingWebhookConfigurationInterfaceMockRecorder struct {

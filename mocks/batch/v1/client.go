@@ -10,8 +10,8 @@ import (
 )
 
 type MockBatchV1Interface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockBatchV1InterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockBatchV1InterfaceMockRecorder
 }
 
 type MockBatchV1InterfaceMockRecorder struct {

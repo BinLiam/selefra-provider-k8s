@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	context "context"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"
@@ -15,8 +15,8 @@ import (
 )
 
 type MockCSIDriversGetter struct {
-	ctrl		*gomock.Controller
-	recorder	*MockCSIDriversGetterMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockCSIDriversGetterMockRecorder
 }
 
 type MockCSIDriversGetterMockRecorder struct {
@@ -46,8 +46,8 @@ func (mr *MockCSIDriversGetterMockRecorder) CSIDrivers() *gomock.Call {
 }
 
 type MockCSIDriverInterface struct {
-	ctrl		*gomock.Controller
-	recorder	*MockCSIDriverInterfaceMockRecorder
+	ctrl     *gomock.Controller
+	recorder *MockCSIDriverInterfaceMockRecorder
 }
 
 type MockCSIDriverInterfaceMockRecorder struct {

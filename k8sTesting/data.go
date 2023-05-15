@@ -85,16 +85,16 @@ func FakeNode(t *testing.T) corev1.Node {
 	node.Spec.PodCIDRs = []string{constants.Constants_2}
 	node.Status.Addresses = []corev1.NodeAddress{
 		{
-			Type:		corev1.NodeHostName,
-			Address:	constants.Testname,
+			Type:    corev1.NodeHostName,
+			Address: constants.Testname,
 		},
 		{
-			Type:		corev1.NodeInternalIP,
-			Address:	constants.Fd,
+			Type:    corev1.NodeInternalIP,
+			Address: constants.Fd,
 		},
 		{
-			Type:		corev1.NodeExternalIP,
-			Address:	constants.Constants_3,
+			Type:    corev1.NodeExternalIP,
+			Address: constants.Constants_3,
 		},
 	}
 	return node
@@ -249,8 +249,8 @@ func FakeSelector(_ *testing.T) *metav1.LabelSelector {
 	return &metav1.LabelSelector{
 		MatchExpressions: []metav1.LabelSelectorRequirement{
 			{
-				Key:		"test",
-				Operator:	"test",
+				Key:      "test",
+				Operator: "test",
 				Values: []string{
 					"test1", "test2",
 				},

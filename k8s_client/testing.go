@@ -1,9 +1,9 @@
 package k8s_client
 
 import (
-	"github.com/selefra/selefra-provider-k8s/constants"
 	"context"
 	"github.com/golang/mock/gomock"
+	"github.com/selefra/selefra-provider-k8s/constants"
 	"github.com/selefra/selefra-provider-sdk/provider"
 	"github.com/selefra/selefra-provider-sdk/provider/schema"
 	"github.com/selefra/selefra-provider-sdk/test_helper"
@@ -25,9 +25,9 @@ func MockTestHelper(t *testing.T, table *schema.Table, builder func(*testing.T, 
 
 func newTestProvider(t *testing.T, ctrl *gomock.Controller, table *schema.Table, builder func(*testing.T, *gomock.Controller) kubernetes.Interface) *provider.Provider {
 	return &provider.Provider{
-		Name:		constants.Ks,
-		Version:	constants.V,
-		TableList:	[]*schema.Table{table},
+		Name:      constants.Ks,
+		Version:   constants.V,
+		TableList: []*schema.Table{table},
 		ClientMeta: schema.ClientMeta{
 			InitClient: func(ctx context.Context, clientMeta *schema.ClientMeta, config *viper.Viper) ([]any, *schema.Diagnostics) {
 
@@ -48,8 +48,8 @@ func newTestProvider(t *testing.T, ctrl *gomock.Controller, table *schema.Table,
 			},
 		},
 		TransformerMeta: schema.TransformerMeta{
-			DefaultColumnValueConvertorBlackList:	[]string{},
-			DataSourcePullResultAutoExpand:		true,
+			DefaultColumnValueConvertorBlackList: []string{},
+			DataSourcePullResultAutoExpand:       true,
 		},
 		ErrorsHandlerMeta: schema.ErrorsHandlerMeta{
 			IgnoredErrors: []schema.IgnoredError{schema.IgnoredErrorOnSaveResult},
